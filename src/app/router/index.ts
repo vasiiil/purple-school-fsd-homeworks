@@ -1,11 +1,12 @@
 import { h } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
-import { IndexPage } from '@/pages/main';
+import { RouteNames } from '@/shared/router';
+import { MainPage } from '@/pages/main';
 import { AboutPage } from '@/pages/about';
 const routes = [
-	{ path: '/', component: IndexPage },
-	{ path: '/about', component: AboutPage },
+	{ path: '/', name: RouteNames.main, component: MainPage },
+	{ path: '/about', name: RouteNames.about, component: AboutPage },
 	{
 		path: '/:catchAll(.*)*',
 		name: 'NotFound',
